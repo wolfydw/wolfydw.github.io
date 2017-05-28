@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo," />
+  <meta name="keywords" content="hexo," />
 
 
 
@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="搭建中…">
-<meta name="keywords" content="Hexo">
+<meta name="description" content="2017年5月29日  添加Algolia搜索 设置404页面 添加文末二维码 添加打赏功能  2017年5月28日  更换评论插件为网易云跟贴（Disqus水土不服） 首页每页显示5篇博文，其他页每页显示20篇博文  2017年5月19日  新增分类栏、标签栏、关于 添加评论插件Disqus  2017年5月17日  开启阅读全文，自动截取150字作为预览 开启代码高亮  2017年5月14日">
+<meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://wolfydw.me/2017/05/13/hello-world/index.html">
+<meta property="og:title" content="博客日志">
+<meta property="og:url" content="http://wolfydw.me/2017/05/14/博客日志/index.html">
 <meta property="og:site_name" content="Wolfydw&#39;s Blog">
-<meta property="og:description" content="搭建中…">
-<meta property="og:updated_time" content="2017-05-15T17:00:07.751Z">
+<meta property="og:description" content="2017年5月29日  添加Algolia搜索 设置404页面 添加文末二维码 添加打赏功能  2017年5月28日  更换评论插件为网易云跟贴（Disqus水土不服） 首页每页显示5篇博文，其他页每页显示20篇博文  2017年5月19日  新增分类栏、标签栏、关于 添加评论插件Disqus  2017年5月17日  开启阅读全文，自动截取150字作为预览 开启代码高亮  2017年5月14日">
+<meta property="og:updated_time" content="2017-05-28T21:41:59.624Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="搭建中…">
+<meta name="twitter:title" content="博客日志">
+<meta name="twitter:description" content="2017年5月29日  添加Algolia搜索 设置404页面 添加文末二维码 添加打赏功能  2017年5月28日  更换评论插件为网易云跟贴（Disqus水土不服） 首页每页显示5篇博文，其他页每页显示20篇博文  2017年5月19日  新增分类栏、标签栏、关于 添加评论插件Disqus  2017年5月17日  开启阅读全文，自动截取150字作为预览 开启代码高亮  2017年5月14日">
 
 
 
@@ -109,7 +109,7 @@
   var CONFIG = {
     root: '/',
     scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    sidebar: {"display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -117,24 +117,24 @@
       author: '博主'
     },
     algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
+      applicationID: 'ANU67U6VVQ',
+      apiKey: '5831caa56dfd701688250caa539b528a',
+      indexName: 'wolfydw',
       hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+      labels: {"input_placeholder":"输入关键字进行搜索","hits_empty":"找不到关于“${query}”的文章","hits_stats":"共找到 ${hits} 篇文章，花费时间 ${time} ms"}
     }
   };
 </script>
 
 
 
-  <link rel="canonical" href="http://wolfydw.me/2017/05/13/hello-world/"/>
+  <link rel="canonical" href="http://wolfydw.me/2017/05/14/博客日志/"/>
 
 
 
 
 
-  <title>Hello World | Wolfydw's Blog</title>
+  <title>博客日志 | Wolfydw's Blog</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -156,10 +156,8 @@
 
   
   
-    
-  
 
-  <div class="container sidebar-position-left page-post-detail ">
+  <div class="container  page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -175,7 +173,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">我爱时海宝！此生不换</p>
+        <p class="site-subtitle">好看的皮囊千篇一律，有趣的灵魂万里挑一</p>
       
   </div>
 
@@ -201,6 +199,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
           </a>
         </li>
       
@@ -236,9 +244,47 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
   
 </nav>
 
@@ -263,7 +309,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://wolfydw.me/2017/05/13/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://wolfydw.me/2017/05/14/博客日志/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wolfydw">
@@ -280,7 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">博客日志</h1>
         
 
         <div class="post-meta">
@@ -292,8 +338,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-13T23:54:04+08:00">
-                2017-05-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-14T00:00:00+08:00">
+                2017-05-14
               </time>
             
 
@@ -303,8 +349,40 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a class="cloud-tie-join-count" href="/2017/05/14/博客日志/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count join-count" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -327,13 +405,46 @@
       
 
       
-        <h1 id="搭建中…"><a href="#搭建中…" class="headerlink" title="搭建中…"></a>搭建中…</h1>
+        <p>2017年5月29日</p>
+<blockquote>
+<p>添加Algolia搜索</p>
+<p>设置404页面</p>
+<p>添加文末二维码</p>
+<p>添加打赏功能</p>
+</blockquote>
+<p>2017年5月28日</p>
+<blockquote>
+<p>更换评论插件为网易云跟贴（Disqus水土不服）</p>
+<p>首页每页显示5篇博文，其他页每页显示20篇博文</p>
+</blockquote>
+<p>2017年5月19日</p>
+<blockquote>
+<p>新增分类栏、标签栏、关于</p>
+<p>添加评论插件Disqus</p>
+</blockquote>
+<p>2017年5月17日</p>
+<blockquote>
+<p>开启阅读全文，自动截取150字作为预览</p>
+<p>开启代码高亮</p>
+</blockquote>
+<p>2017年5月14日</p>
+<blockquote>
+<p>博客诞生</p>
+<p>修改主题为<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">NexT.Pisces</a></p>
+<p>修改了博客标题并添加了自己的联系方式</p>
+</blockquote>
+
       
     </div>
 
     <div>
       
         
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/blogQR.png" alt="Wolfydw wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫一扫，用手机访问本站</div>
+</div>
+
 
       
     </div>
@@ -341,6 +452,27 @@
     <div>
       
         
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>支持创作，鼓励分享！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechat-reward-image.png" alt="Wolfydw WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/alipay-reward-image.png" alt="Wolfydw Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
     </div>
@@ -356,7 +488,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
           
         </div>
       
@@ -365,6 +497,22 @@
         
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/16/workflow学习笔记/" rel="prev" title="workflow学习笔记">
+                workflow学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -387,6 +535,8 @@
           
   <div class="comments" id="comments">
     
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
   </div>
 
 
@@ -408,17 +558,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -433,12 +574,21 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
 
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
           
 
           
@@ -446,7 +596,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -509,22 +659,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建中…"><span class="nav-number">1.</span> <span class="nav-text">搭建中…</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -677,6 +811,22 @@
 
 
   
+    
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "579e20a31cf14826879f515825a9b666",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+  
+
+
+
+
+
 
 
 
@@ -687,17 +837,17 @@
 
 
 
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
 
   
-
-
-
-
-
-
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
   
 
-
+  <script src="/js/src/algolia-search.js?v=5.1.1"></script>
 
 
 
