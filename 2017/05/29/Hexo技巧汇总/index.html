@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -80,6 +80,8 @@
 
 
 
+  <link rel="alternate" href="/rss2.xml" title="Wolfydw's Blog" type="application/atom+xml" />
+
 
 
 
@@ -97,7 +99,7 @@
 <meta property="og:url" content="http://wolfydw.me/2017/05/29/Hexo技巧汇总/index.html">
 <meta property="og:site_name" content="Wolfydw&#39;s Blog">
 <meta property="og:description" content="Hexo-NexT相关技巧汇总">
-<meta property="og:updated_time" content="2017-05-28T22:35:44.540Z">
+<meta property="og:updated_time" content="2017-05-31T18:34:34.585Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo技巧汇总">
 <meta name="twitter:description" content="Hexo-NexT相关技巧汇总">
@@ -108,7 +110,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
@@ -203,12 +205,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            分类
+            标签
           </a>
         </li>
       
@@ -219,16 +221,6 @@
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
           </a>
         </li>
       
@@ -418,6 +410,11 @@
 <p>完成以上设置之后，在每篇文章之后都会添加网站二维码。</p>
 <h2 id="开启打赏功能"><a href="#开启打赏功能" class="headerlink" title="开启打赏功能"></a>开启打赏功能</h2><p> 只需要<code>主题配置文件</code>中填入 微信 和 支付宝 收款二维码图片地址，即可开启该功能。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">reward_comment: 支持创作，鼓励分享！</div><div class="line">wechatpay: /path/to/wechat-reward-image</div><div class="line">alipay: /path/to/alipay-reward-image</div></pre></td></tr></table></figure>
+<h2 id="添加RSS功能"><a href="#添加RSS功能" class="headerlink" title="添加RSS功能"></a>添加RSS功能</h2><p>1.安装RSS插件，<a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="external">hexo-generator-feed</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-generator-feed --save</div></pre></td></tr></table></figure>
+<p>2.编辑<code>站点配置文件</code>，追加以下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">plugin:</div><div class="line">- hexo-generator-feed</div><div class="line"></div><div class="line"># 设置RSS</div><div class="line">feed:</div><div class="line">  type: rss2</div><div class="line">  path: rss2.xml</div><div class="line">  limit: 0</div><div class="line">  hub: </div><div class="line">  content: true</div></pre></td></tr></table></figure>
+<p>3.检查NexT配置文件中RSS参数是否为空（留空代表使用 Hexo 生成的 Feed 链接，false代表禁用RSS）</p>
 
       
     </div>
@@ -568,7 +565,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -590,7 +587,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -598,6 +595,13 @@
 
         </nav>
 
+        
+          <div class="feed-link motion-element">
+            <a href="/rss2.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
         
 
         <div class="links-of-author motion-element">
@@ -613,15 +617,6 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://twitter.com/wolfydw666" target="_blank" title="Twitter">
-                  
-                    <i class="fa fa-fw fa-twitter"></i>
-                  
-                  Twitter
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
                 <a href="http://t.me/wolfydw" target="_blank" title="Telegram">
                   
                     <i class="fa fa-fw fa-telegram"></i>
@@ -631,7 +626,7 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="wolfydw@gmail.com" target="_blank" title="Email">
+                <a href="mailto:wolfydw@gmail.com" target="_blank" title="Email">
                   
                     <i class="fa fa-fw fa-envelope"></i>
                   
@@ -663,7 +658,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Algolia搜索"><span class="nav-number">1.</span> <span class="nav-text">Algolia搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网易云跟帖"><span class="nav-number">2.</span> <span class="nav-text">网易云跟帖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置404页面"><span class="nav-number">3.</span> <span class="nav-text">设置404页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章末尾添加网站二维码"><span class="nav-number">4.</span> <span class="nav-text">文章末尾添加网站二维码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启打赏功能"><span class="nav-number">5.</span> <span class="nav-text">开启打赏功能</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Algolia搜索"><span class="nav-number">1.</span> <span class="nav-text">Algolia搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网易云跟帖"><span class="nav-number">2.</span> <span class="nav-text">网易云跟帖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置404页面"><span class="nav-number">3.</span> <span class="nav-text">设置404页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章末尾添加网站二维码"><span class="nav-number">4.</span> <span class="nav-text">文章末尾添加网站二维码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启打赏功能"><span class="nav-number">5.</span> <span class="nav-text">开启打赏功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加RSS功能"><span class="nav-number">6.</span> <span class="nav-text">添加RSS功能</span></a></li></ol></div>
             
 
           </div>
@@ -701,7 +696,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -740,8 +735,6 @@
   
 
 
-  
-
 
 
 
@@ -770,9 +763,6 @@
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
-  
-  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
 
   
 
@@ -785,13 +775,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>

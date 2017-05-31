@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -80,6 +80,8 @@
 
 
 
+  <link rel="alternate" href="/rss2.xml" title="Wolfydw's Blog" type="application/atom+xml" />
+
 
 
 
@@ -103,7 +105,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Mist',
     sidebar: {"display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
@@ -200,12 +202,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories" rel="section">
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            分类
+            标签
           </a>
         </li>
       
@@ -216,16 +218,6 @@
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
           </a>
         </li>
       
@@ -410,144 +402,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/05/19/Hexo-NexT开启Disqus评论系统/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://wolfydw.me/2017/05/18/记录Hexo搭建的全流程和一些小问题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wolfydw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Wolfydw's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/18/记录Hexo搭建的全流程和一些小问题/" itemprop="url">记录Hexo搭建的全流程和一些小问题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-18T00:00:00+08:00">
-                2017-05-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="记录Hexo搭建的全流程和一些小问题"><a href="#记录Hexo搭建的全流程和一些小问题" class="headerlink" title="记录Hexo搭建的全流程和一些小问题"></a>记录Hexo搭建的全流程和一些小问题</h1><p>Hexo作为当前流行的静态博客搭建程序，网上有太多的教程，本片仅作为个人整理以方便大家查阅</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/18/记录Hexo搭建的全流程和一些小问题/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -821,7 +675,14 @@
       
         
           
-            <p>2017年5月29日</p>
+            <p>2017年6月1日</p>
+<blockquote>
+<p>更换主题为<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">NexT.Mist</a></p>
+<p>关闭背景动画</p>
+<p>添加RSS功能</p>
+<p>调换“标签”与“归档”的位置，删除了“分类”</p>
+</blockquote>
+<p>2017年5月29日</p>
 <blockquote>
 <p>添加Algolia搜索</p>
 <p>设置404页面</p>
@@ -840,13 +701,13 @@
 </blockquote>
 <p>2017年5月17日</p>
 <blockquote>
-<p>开启阅读全文，自动截取150字作为预览</p>
+<p>开启阅读全文，在文章中使用<code>&lt;!--more--&gt;</code>进行分隔</p>
 <p>开启代码高亮</p>
 </blockquote>
 <p>2017年5月14日</p>
 <blockquote>
 <p>博客诞生</p>
-<p>修改主题为<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">NexT.Pisces</a></p>
+<p>更换主题为<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">NexT.Pisces</a></p>
 <p>修改了博客标题并添加了自己的联系方式</p>
 </blockquote>
 
@@ -932,7 +793,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -954,7 +815,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -962,6 +823,13 @@
 
         </nav>
 
+        
+          <div class="feed-link motion-element">
+            <a href="/rss2.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
         
 
         <div class="links-of-author motion-element">
@@ -977,15 +845,6 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://twitter.com/wolfydw666" target="_blank" title="Twitter">
-                  
-                    <i class="fa fa-fw fa-twitter"></i>
-                  
-                  Twitter
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
                 <a href="http://t.me/wolfydw" target="_blank" title="Telegram">
                   
                     <i class="fa fa-fw fa-telegram"></i>
@@ -995,7 +854,7 @@
               </span>
             
               <span class="links-of-author-item">
-                <a href="wolfydw@gmail.com" target="_blank" title="Email">
+                <a href="mailto:wolfydw@gmail.com" target="_blank" title="Email">
                   
                     <i class="fa fa-fw fa-envelope"></i>
                   
@@ -1049,7 +908,7 @@
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
+    NexT.Mist
   </a>
 </div>
 
@@ -1088,8 +947,6 @@
   
 
 
-  
-
 
 
 
@@ -1118,9 +975,6 @@
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
-  
-  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
 
   
 
@@ -1133,13 +987,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
-
-
 
   
 

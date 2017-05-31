@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Wolfydw&#39;s Blog</title>
+    <link>http://wolfydw.me/</link>
+    <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
+    
+    <description></description>
+    <pubDate>Wed, 31 May 2017 18:34:34 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Hexo技巧汇总</title>
+      <link>http://wolfydw.me/2017/05/29/Hexo%E6%8A%80%E5%B7%A7%E6%B1%87%E6%80%BB/</link>
+      <guid>http://wolfydw.me/2017/05/29/Hexo%E6%8A%80%E5%B7%A7%E6%B1%87%E6%80%BB/</guid>
+      <pubDate>Sun, 28 May 2017 20:40:45 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;Hexo-NexT相关技巧汇总&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>Hexo-NexT相关技巧汇总</p>
+<a id="more"></a>
+<h2 id="Algolia搜索"><a href="#Algolia搜索" class="headerlink" title="Algolia搜索"></a>Algolia搜索</h2><p><a href="http://theme-next.iissnan.com/third-party-services.html#algolia-search" target="_blank" rel="external">点击查看官方文档</a></p>
+<h2 id="网易云跟帖"><a href="#网易云跟帖" class="headerlink" title="网易云跟帖"></a>网易云跟帖</h2><p>最新版（5.1）版本的next已经集成了网易云跟帖，首先在官网<a href="https://manage.gentie.163.com/" target="_blank" rel="external">网易云跟帖</a>中注册，然后在获取代码&gt;通用代码中拿到productKey，之后在 <code>主题配置文件</code>中的gentie_productKey字段后添加即可</p>
+<h2 id="设置404页面"><a href="#设置404页面" class="headerlink" title="设置404页面"></a>设置404页面</h2><p>通常，对于绑定了顶级域名的 Hexo 博客来说，只需在所用主题的source文件夹下新建一个404.html文件，再生成部署到云端，即可生成博客404页面。但这种方法生成的页面是孤立的，下面介绍一种生成匹配主题的404页面的方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">启动 Git Bash，进入 Hexo 所在文件夹，输入 hexo new page 404 ;</div><div class="line">打开刚新建的页面文件，默认在 Hexo 文件夹根目录下 /source/404/index.md；</div><div class="line">在顶部插入一行，写上permalink: /404，这表示指定该页固定链接为 http://&quot;主页&quot;/404.html</div></pre></td></tr></table></figure>
+<p>刚开始使用腾讯404公益页面，但是移动端适配不好，遂弃之。我现在的<a href="http://wolfydw.me/举个404栗子">404</a>页面对应的markdown文件内容为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: 404 Not Found</div><div class="line">type: &apos;404&apos;</div><div class="line">comments: false</div><div class="line">permalink: /404</div><div class="line">---</div><div class="line">------</div><div class="line">&lt;center&gt;**对不起，您所访问的页面不存在或者已删除**</div><div class="line">你可以[**点击此处**](http://wolfydw.me)返回首页。</div><div class="line">你也可以&lt;a href=&quot;#&quot; class=&quot;popup-trigger&quot;&gt;**点击此处**&lt;/a&gt;重新搜索结果。&lt;/center&gt;</div></pre></td></tr></table></figure>
+<h2 id="文章末尾添加网站二维码"><a href="#文章末尾添加网站二维码" class="headerlink" title="文章末尾添加网站二维码"></a>文章末尾添加网站二维码</h2><p>利用 NexT 主题自带的<code>wechat_subscriber</code>功能在文章末尾添加网站二维码。<br>首先生成你网站的二维码，放到<code>主题根目录/source/images/</code>文件夹中，然后修改<code>主题配置文件</code>，添加如下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># Wechat Subscriber</div><div class="line">wechat_subscriber:</div><div class="line">  enabled: true</div><div class="line">  qcode: /images/blogQR.png</div><div class="line">  description: 扫一扫，用手机访问本站</div></pre></td></tr></table></figure>
+<p>完成以上设置之后，在每篇文章之后都会添加网站二维码。</p>
+<h2 id="开启打赏功能"><a href="#开启打赏功能" class="headerlink" title="开启打赏功能"></a>开启打赏功能</h2><p> 只需要<code>主题配置文件</code>中填入 微信 和 支付宝 收款二维码图片地址，即可开启该功能。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">reward_comment: 支持创作，鼓励分享！</div><div class="line">wechatpay: /path/to/wechat-reward-image</div><div class="line">alipay: /path/to/alipay-reward-image</div></pre></td></tr></table></figure>
+<h2 id="添加RSS功能"><a href="#添加RSS功能" class="headerlink" title="添加RSS功能"></a>添加RSS功能</h2><p>1.安装RSS插件，<a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="external">hexo-generator-feed</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-generator-feed --save</div></pre></td></tr></table></figure>
+<p>2.编辑<code>站点配置文件</code>，追加以下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">plugin:</div><div class="line">- hexo-generator-feed</div><div class="line"></div><div class="line"># 设置RSS</div><div class="line">feed:</div><div class="line">  type: rss2</div><div class="line">  path: rss2.xml</div><div class="line">  limit: 0</div><div class="line">  hub: </div><div class="line">  content: true</div></pre></td></tr></table></figure>
+<p>3.检查NexT配置文件中RSS参数是否为空（留空代表使用 Hexo 生成的 Feed 链接，false代表禁用RSS）</p>
+]]></content:encoded>
+      
+      <comments>http://wolfydw.me/2017/05/29/Hexo%E6%8A%80%E5%B7%A7%E6%B1%87%E6%80%BB/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>分别设置hexo首页、标签页、归档页文章个数</title>
+      <link>http://wolfydw.me/2017/05/29/%E5%88%86%E5%88%AB%E8%AE%BE%E7%BD%AEhexo%E9%A6%96%E9%A1%B5%E3%80%81%E6%A0%87%E7%AD%BE%E9%A1%B5%E3%80%81%E5%BD%92%E6%A1%A3%E9%A1%B5%E6%96%87%E7%AB%A0%E4%B8%AA%E6%95%B0/</link>
+      <guid>http://wolfydw.me/2017/05/29/%E5%88%86%E5%88%AB%E8%AE%BE%E7%BD%AEhexo%E9%A6%96%E9%A1%B5%E3%80%81%E6%A0%87%E7%AD%BE%E9%A1%B5%E3%80%81%E5%BD%92%E6%A1%A3%E9%A1%B5%E6%96%87%E7%AB%A0%E4%B8%AA%E6%95%B0/</guid>
+      <pubDate>Sun, 28 May 2017 18:29:41 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;打开hexo的&lt;code&gt;站点配置文件&lt;/code&gt;，我们可以找到一个&lt;code&gt;per_page&lt;/code&gt;参数，这个参数可以调节站点中所有页面一页包含的文章数。但是我们一般希望首页展示文章的个数少一些，归档页等页面的文章数目多一些，可以通过以下方法进行设置&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>打开hexo的<code>站点配置文件</code>，我们可以找到一个<code>per_page</code>参数，这个参数可以调节站点中所有页面一页包含的文章数。但是我们一般希望首页展示文章的个数少一些，归档页等页面的文章数目多一些，可以通过以下方法进行设置</p>
+<a id="more"></a>
+<p>打开<code>站点配置文件</code>，找到这一段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># Pagination</div><div class="line">## Set per_page to 0 to disable pagination</div><div class="line">per_page: 10 </div><div class="line">pagination_dir: page</div></pre></td></tr></table></figure>
+<p>修改为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"># Pagination</div><div class="line">## Set per_page to 0 to disable pagination</div><div class="line">index_generator:</div><div class="line">  per_page: 5 ##首页默认5篇文章标题，如果值为0不分页</div><div class="line">archive_generator:</div><div class="line">  per_page: 20 ##归档页面默认20篇文章标题，如果值为0不分页</div><div class="line">  yearly: true ##生成年视图</div><div class="line">  monthly: true ##生成月视图</div><div class="line">tag_generator:</div><div class="line">  per_page: 20 ##标签页面默认20篇文章，如果值为0不分页</div><div class="line">category_generator: </div><div class="line">  per_page: 20 ##分类页面默认20篇文章，如果值为0不分页</div></pre></td></tr></table></figure>
+]]></content:encoded>
+      
+      <comments>http://wolfydw.me/2017/05/29/%E5%88%86%E5%88%AB%E8%AE%BE%E7%BD%AEhexo%E9%A6%96%E9%A1%B5%E3%80%81%E6%A0%87%E7%AD%BE%E9%A1%B5%E3%80%81%E5%BD%92%E6%A1%A3%E9%A1%B5%E6%96%87%E7%AB%A0%E4%B8%AA%E6%95%B0/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Hexo-NexT新增分类页和标签页</title>
+      <link>http://wolfydw.me/2017/05/29/Hexo-NexT%E6%96%B0%E5%A2%9E%E5%88%86%E7%B1%BB%E9%A1%B5%E5%92%8C%E6%A0%87%E7%AD%BE%E9%A1%B5/</link>
+      <guid>http://wolfydw.me/2017/05/29/Hexo-NexT%E6%96%B0%E5%A2%9E%E5%88%86%E7%B1%BB%E9%A1%B5%E5%92%8C%E6%A0%87%E7%AD%BE%E9%A1%B5/</guid>
+      <pubDate>Sun, 28 May 2017 18:02:52 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;切换到NexT主题后，默认是没有分类页和标签页的，要自己新建&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>切换到NexT主题后，默认是没有分类页和标签页的，要自己新建</p>
+<a id="more"></a>
+<h2 id="新增菜单"><a href="#新增菜单" class="headerlink" title="新增菜单"></a>新增菜单</h2><p>编辑<code>主题配置文件</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">menu:</div><div class="line">  home: /</div><div class="line">  categories: /categories</div><div class="line">  about: /about</div><div class="line">  archives: /archives</div><div class="line">  tags: /tags</div><div class="line">  #sitemap: /sitemap.xml</div><div class="line">  #commonweal: /404.html</div></pre></td></tr></table></figure>
+<h2 id="修改page模版"><a href="#修改page模版" class="headerlink" title="修改page模版"></a>修改page模版</h2><p><code>\scaffolds\page.md</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">updated: </div><div class="line">type: &quot;&#123;&#123; title &#125;&#125;&quot;</div><div class="line">comments: false</div></pre></td></tr></table></figure>
+<h2 id="新建page"><a href="#新建page" class="headerlink" title="新建page"></a>新建page</h2><p>在终端执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo new page tags</div><div class="line">hexo new page categories</div></pre></td></tr></table></figure>
+]]></content:encoded>
+      
+      <comments>http://wolfydw.me/2017/05/29/Hexo-NexT%E6%96%B0%E5%A2%9E%E5%88%86%E7%B1%BB%E9%A1%B5%E5%92%8C%E6%A0%87%E7%AD%BE%E9%A1%B5/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>json解析与格式化</title>
+      <link>http://wolfydw.me/2017/05/29/json%E8%A7%A3%E6%9E%90%E4%B8%8E%E6%A0%BC%E5%BC%8F%E5%8C%96/</link>
+      <guid>http://wolfydw.me/2017/05/29/json%E8%A7%A3%E6%9E%90%E4%B8%8E%E6%A0%BC%E5%BC%8F%E5%8C%96/</guid>
+      <pubDate>Sun, 28 May 2017 17:11:51 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;在编写涉及request的workflow流程时经常需要处理json格式的数据，但是网站返回的json都非常杂乱无章，需要进行格式化才能进行阅读&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>在编写涉及request的workflow流程时经常需要处理json格式的数据，但是网站返回的json都非常杂乱无章，需要进行格式化才能进行阅读</p>
+<a id="more"></a>
+<h2 id="json在线格式化"><a href="#json在线格式化" class="headerlink" title="json在线格式化"></a>json在线格式化</h2><p><a href="http://www.json.cn/" target="_blank" rel="external">http://www.json.cn/</a></p>
+<p><a href="https://c.runoob.com/front-end/53" target="_blank" rel="external">https://c.runoob.com/front-end/53</a></p>
+<h2 id="利用notepad-插件格式化json"><a href="#利用notepad-插件格式化json" class="headerlink" title="利用notepad++插件格式化json"></a>利用notepad++插件格式化json</h2><p>1.下载<a href="https://notepad-plus-plus.org/" target="_blank" rel="external">notepad++</a></p>
+<p>2.下载<a href="https://github.com/kapilratnani/JSON-Viewer/releases" target="_blank" rel="external">JSONViewer</a>的最新版本</p>
+<p>3.将NPPJSONViewer.dll拷贝到notepad++的根目录</p>
+<p>4.复制json到notepad++</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">插件--JSON Viewer--Format JSON</div><div class="line">语言--J--JSON</div></pre></td></tr></table></figure>
+<p>5.完毕</p>
+]]></content:encoded>
+      
+      <comments>http://wolfydw.me/2017/05/29/json%E8%A7%A3%E6%9E%90%E4%B8%8E%E6%A0%BC%E5%BC%8F%E5%8C%96/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>自定义Hexo博客的文章、草稿和页面的模板</title>
+      <link>http://wolfydw.me/2017/05/29/%E8%87%AA%E5%AE%9A%E4%B9%89Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%96%87%E7%AB%A0%E3%80%81%E8%8D%89%E7%A8%BF%E5%92%8C%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%A8%A1%E6%9D%BF/</link>
+      <guid>http://wolfydw.me/2017/05/29/%E8%87%AA%E5%AE%9A%E4%B9%89Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%96%87%E7%AB%A0%E3%80%81%E8%8D%89%E7%A8%BF%E5%92%8C%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%A8%A1%E6%9D%BF/</guid>
+      <pubDate>Sun, 28 May 2017 17:09:18 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;使用Hexo搭建博客比较方便，在创建新的文章(post)、草稿(draft)或者页面(page)时，hexo会使用默认的模板。默认模板可能不太符合我们自己的习惯，因此需要自定义。&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>使用Hexo搭建博客比较方便，在创建新的文章(post)、草稿(draft)或者页面(page)时，hexo会使用默认的模板。默认模板可能不太符合我们自己的习惯，因此需要自定义。</p>
+<a id="more"></a>
+<p>打开hexo的安装目录，目录树为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">hexo-install-directory</div><div class="line">├── CNAME</div><div class="line">├── _config.yml 				//Hexo的配置文件，可以配置主题、语言等</div><div class="line">├── avatar.jpg</div><div class="line">├── db.json</div><div class="line">├── debug.log</div><div class="line">├── node_modules</div><div class="line">│   ├── hexo</div><div class="line">│   ├── hexo-deployer-git</div><div class="line">│   ├── hexo-generator-archive</div><div class="line">│   ├── hexo-generator-category</div><div class="line">│   ├── hexo-generator-feed</div><div class="line">│   ├── hexo-generator-index</div><div class="line">│   ├── hexo-generator-sitemap</div><div class="line">│   ├── hexo-generator-tag</div><div class="line">│   ├── hexo-migrator-wordpress</div><div class="line">│   ├── hexo-renderer-ejs</div><div class="line">│   ├── hexo-renderer-marked</div><div class="line">│   ├── hexo-renderer-stylus</div><div class="line">│   └── hexo-server</div><div class="line">├── package.json</div><div class="line">├── public						//执行hexo g命令后，生成的内容会在这里，包括所有的文章、页面、分类、tag等.</div><div class="line">│   ├── 2013</div><div class="line">│   ├── 2014</div><div class="line">│   ├── 2015</div><div class="line">│   ├── 2016</div><div class="line">│   ├── 404.html</div><div class="line">│   ├── Staticfile</div><div class="line">│   ├── archives</div><div class="line">│   ├── atom.xml</div><div class="line">│   ├── categories</div><div class="line">│   ├── css</div><div class="line">│   ├── images</div><div class="line">│   ├── index.html</div><div class="line">│   ├── js</div><div class="line">│   ├── page</div><div class="line">│   ├── sitemap.xml</div><div class="line">│   └── vendors</div><div class="line">├── scaffolds					//保存着默认模板，自定义模板就是修改该目录下的文件</div><div class="line">│   ├── draft.md 				//默认的草稿模板</div><div class="line">│   ├── page.md 				//默认的页面模板</div><div class="line">│   └── post.md 				//默认的文章模板</div><div class="line">├── source 						//Hexo存放编辑页面的地方，可以使用vim或其他编辑器编辑这里的内容</div><div class="line">│   ├── 404.html   				//自定义404页面，可以使用腾讯公益404页面</div><div class="line">│   ├── Staticfile 				</div><div class="line">│   ├── _drafts					//存放所有的草稿文件的目录</div><div class="line">│   ├── _posts					//存放所有的文章文件的目录，用的最多，比如执行hexo n &quot;post_name&quot;之后，post_name这篇文章就存放在这个目录下</div><div class="line">│   ├── categories</div><div class="line">│   └── images					//这是我自己定义的，用于存放个人的avatar</div><div class="line">└── themes						//Hexo的所有主题</div><div class="line">    ├── landscape				</div><div class="line">    └── next					//这是我目前用的主题</div></pre></td></tr></table></figure>
+<p>如上所述，如果要自定义文章模板，则直接用编辑器打开<code>hexo-install-directory/scaffolds/post.md</code>这个文件，然后自己编写需要的模板信息，保存即可。下次再执行<code>hexo n &quot;page_name&quot;</code>命令时，Hexo就会使用这个模板来新建文章了。</p>
+]]></content:encoded>
+      
+      <comments>http://wolfydw.me/2017/05/29/%E8%87%AA%E5%AE%9A%E4%B9%89Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%96%87%E7%AB%A0%E3%80%81%E8%8D%89%E7%A8%BF%E5%92%8C%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%A8%A1%E6%9D%BF/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Hexo-NexT开启Disqus评论系统</title>
+      <link>http://wolfydw.me/2017/05/19/Hexo-NexT%E5%BC%80%E5%90%AFDisqus%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</link>
+      <guid>http://wolfydw.me/2017/05/19/Hexo-NexT%E5%BC%80%E5%90%AFDisqus%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</guid>
+      <pubDate>Thu, 18 May 2017 16:00:00 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;Hexo-NexT开启Disqus评论系统&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>Hexo-NexT开启Disqus评论系统</p>
+<a id="more"></a>
+<ol>
+<li><p>到<a href="https://disqus.com" target="_blank" rel="external">disqus</a>官网注册账号并登陆，可使用facebook、twitter、google账号登录。<br>选择你注册账号的用途，这里我们选<code>I want to install disqus on my site</code><br><img src="C:\Users\wolfydw\blog\source\_posts\2017-05-19Hexo-NexT开启Disqus评论系统\disqus-signup.jpg" alt="disqus-signup"><br>填写你网站的相关信息<br><img src="C:\Users\wolfydw\blog\source\_posts\2017-05-19Hexo-NexT开启Disqus评论系统\disqus-signup1.jpg" alt="disqus-signup1"><br>选择付费套餐，这里当然是选择免费的<code>Basic</code>了<br><img src="C:\Users\wolfydw\blog\source\_posts\2017-05-19Hexo-NexT开启Disqus评论系统\disqus-signup2.jpg" alt="disqus-signup2"></p>
+<p>之后的就不用选择了，已经可以使用了</p>
+</li>
+<li>编辑<code>主题配置文件</code></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">disqus:</div><div class="line">  enable: ture   # 开启disqus</div><div class="line">  shortname:     # 你刚注册的disqus用户名</div><div class="line">  count: false   # 开启评论数量显示</div></pre></td></tr></table></figure>
+]]></content:encoded>
+      
+      <comments>http://wolfydw.me/2017/05/19/Hexo-NexT%E5%BC%80%E5%90%AFDisqus%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>workflow学习笔记</title>
+      <link>http://wolfydw.me/2017/05/16/workflow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <guid>http://wolfydw.me/2017/05/16/workflow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <pubDate>Mon, 15 May 2017 16:00:00 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;workflow的一些教程链接&lt;br&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>workflow的一些教程链接<br><a id="more"></a></p>
+<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><h2 id="学习教程"><a href="#学习教程" class="headerlink" title="学习教程"></a>学习教程</h2><ul>
+<li><a href="http://deerchao.net/tutorials/regex/regex.htm" target="_blank" rel="external">入门</a></li>
+<li><a href="http://blog.csdn.net/lxcnn/article/category/538256" target="_blank" rel="external">深入</a></li>
+<li><a href="https://msdn.microsoft.com/zh-cn/library/hs600312.aspx" target="_blank" rel="external">官方</a></li>
+<li><a href="http://huangshanben.com/articles/3039" target="_blank" rel="external">模式修饰符</a></li>
+</ul>
+<h2 id="在线测试工具"><a href="#在线测试工具" class="headerlink" title="在线测试工具"></a>在线测试工具</h2><ul>
+<li><a href="http://regexr.com/" target="_blank" rel="external">http://regexr.com/</a></li>
+</ul>
+<h2 id="书籍"><a href="#书籍" class="headerlink" title="书籍"></a>书籍</h2><ul>
+<li>《精通正则表达式》作者: Jeffrey E. F. Friedl </li>
+</ul>
+<h1 id="surg模版"><a href="#surg模版" class="headerlink" title="surg模版"></a>surg模版</h1><p><a href="https://raw.githubusercontent.com/wolfydw/workflow/master/ssencrypt.module" target="_blank" rel="external">ssencrypt.module</a></p>
+]]></content:encoded>
+      
+      <comments>http://wolfydw.me/2017/05/16/workflow%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>博客日志</title>
+      <link>http://wolfydw.me/2017/05/14/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%97/</link>
+      <guid>http://wolfydw.me/2017/05/14/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%97/</guid>
+      <pubDate>Sat, 13 May 2017 16:00:00 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;2017年6月1日&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;更换主题为&lt;a href=&quot;https://github.com/iissnan/hexo-theme-next&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;NexT.Mist&lt;/a&gt;&lt;/p&gt;
+
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>2017年6月1日</p>
+<blockquote>
+<p>更换主题为<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">NexT.Mist</a></p>
+<p>关闭背景动画</p>
+<p>添加RSS功能</p>
+<p>调换“标签”与“归档”的位置，删除了“分类”</p>
+</blockquote>
+<p>2017年5月29日</p>
+<blockquote>
+<p>添加Algolia搜索</p>
+<p>设置404页面</p>
+<p>添加文末二维码</p>
+<p>添加打赏功能</p>
+</blockquote>
+<p>2017年5月28日</p>
+<blockquote>
+<p>更换评论插件为网易云跟贴（Disqus水土不服）</p>
+<p>首页每页显示5篇博文，其他页每页显示20篇博文</p>
+</blockquote>
+<p>2017年5月19日</p>
+<blockquote>
+<p>新增分类栏、标签栏、关于</p>
+<p>添加评论插件Disqus</p>
+</blockquote>
+<p>2017年5月17日</p>
+<blockquote>
+<p>开启阅读全文，在文章中使用<code>&lt;!--more--&gt;</code>进行分隔</p>
+<p>开启代码高亮</p>
+</blockquote>
+<p>2017年5月14日</p>
+<blockquote>
+<p>博客诞生</p>
+<p>更换主题为<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">NexT.Pisces</a></p>
+<p>修改了博客标题并添加了自己的联系方式</p>
+</blockquote>
+]]></content:encoded>
+      
+      <comments>http://wolfydw.me/2017/05/14/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%97/#disqus_thread</comments>
+    </item>
+    
+  </channel>
+</rss>
