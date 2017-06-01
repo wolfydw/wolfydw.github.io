@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Thu, 01 Jun 2017 11:26:19 GMT</pubDate>
+    <pubDate>Thu, 01 Jun 2017 11:39:56 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -166,7 +166,7 @@
       
       </description>
       
-      <content:encoded><![CDATA[<p>2017年6月1日</p><blockquote><p>使用<a href="https://github.com/chenzhutian/hexo-all-minifier" target="_blank" rel="external">hexo-all-minifier</a>进行优化</p></blockquote><p>2017年5月31日</p><blockquote><p>更换主题为<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">NexT.Mist</a></p><p>关闭背景动画</p><p>添加RSS功能</p><p>调换“标签”与“归档”的位置，删除了“分类”</p></blockquote><p>2017年5月29日</p><blockquote><p>添加Algolia搜索</p><p>设置404页面</p><p>添加文末二维码</p><p>添加打赏功能</p></blockquote><p>2017年5月28日</p><blockquote><p>更换评论插件为网易云跟贴（Disqus水土不服）</p><p>首页每页显示5篇博文，其他页每页显示20篇博文</p></blockquote><p>2017年5月19日</p><blockquote><p>新增分类栏、标签栏、关于</p><p>添加评论插件Disqus</p></blockquote><p>2017年5月17日</p><blockquote><p>开启阅读全文，在文章中使用<code>&lt;!--more--&gt;</code>进行分隔</p><p>开启代码高亮</p></blockquote><p>2017年5月14日</p><blockquote><p>博客诞生</p><p>更换主题为<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">NexT.Pisces</a></p><p>修改了博客标题并添加了自己的联系方式</p></blockquote>]]></content:encoded>
+      <content:encoded><![CDATA[<p>2017年6月1日</p><blockquote><p>使用<a href="https://github.com/chenzhutian/hexo-all-minifier" target="_blank" rel="external">hexo-all-minifier</a>进行优化</p><p>底部声明文字换成英文</p></blockquote><p>2017年5月31日</p><blockquote><p>更换主题为<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">NexT.Mist</a></p><p>关闭背景动画</p><p>添加RSS功能</p><p>调换“标签”与“归档”的位置，删除了“分类”</p></blockquote><p>2017年5月29日</p><blockquote><p>添加Algolia搜索</p><p>设置404页面</p><p>添加文末二维码</p><p>添加打赏功能</p></blockquote><p>2017年5月28日</p><blockquote><p>更换评论插件为网易云跟贴（Disqus水土不服）</p><p>首页每页显示5篇博文，其他页每页显示20篇博文</p></blockquote><p>2017年5月19日</p><blockquote><p>新增分类栏、标签栏、关于</p><p>添加评论插件Disqus</p></blockquote><p>2017年5月17日</p><blockquote><p>开启阅读全文，在文章中使用<code>&lt;!--more--&gt;</code>进行分隔</p><p>开启代码高亮</p></blockquote><p>2017年5月14日</p><blockquote><p>博客诞生</p><p>更换主题为<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">NexT.Pisces</a></p><p>修改了博客标题并添加了自己的联系方式</p></blockquote>]]></content:encoded>
       
       <comments>http://wolfydw.me/2017/05/13/%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%97/#disqus_thread</comments>
     </item>
